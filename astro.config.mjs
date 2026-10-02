@@ -13,7 +13,7 @@ export default defineConfig({
     starlight({
       title: "Dominantes Secundarias",
       logo: {
-        src: "./src/assets/logo.png",
+        src: "./src/assets/logo-gea.svg",
       },
       defaultLocale: "es-US",
       social: [

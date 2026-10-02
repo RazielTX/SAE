@@ -29,26 +29,63 @@ export const example1 = [
   - $ii$ (Re menor) $\rightarrow$ mediante $V/ii$ o $vii^\circ/ii$
 
 export const example2 = [
-  ["d/4,a/4|w"],
-  ["f#/4,c#/5|w"],
-  ["e/4,b/4|w"],
-  ["g#/4,d#/5|w"],
+  ["a/4,c#/5,e/5,g/5|w", "d/5,d/5,f/5|w"],
+  ["c#/5,e/5,g/5,bb/5|w", "d/5,d/5,f/5,a/5|w"],
 ];
 
 <MusicExample width={800} client:load clef="treble" notes={example2} />
 
 - $iii$ (Mi menor) $\rightarrow$ mediante $V/iii$ o $vii^\circ/iii$
+
+export const example3 = [
+  ["b/3,d#/4,f#/4,a/4|w", "e/4,e/4,g/4|w"],
+  ["d#/4,f#/4,a/4,c(n)/5|w", "e/4,e/4,g/4,b/4|w"],
+];
+
+<MusicExample width={800} client:load clef="treble" notes={example3} />
+
 - $IV$ (Fa Mayor) $\rightarrow$ mediante $V/IV$ o $vii^\circ/IV$
+
+export const example4 = [
+  ["c/4,e/4,g/4,bb/4|w", "f/4,f/4,a/4|w"],
+  ["e/4,g/4,bb/4,db/5|w", "f/4,f/4,a/4,c/5|w"],
+];
+
+<MusicExample width={800} client:load clef="treble" notes={example4} />
+
 - $V$ (Sol Mayor) $\rightarrow$ mediante $V/V$ o $vii^\circ/V$
+
+export const example5 = [
+  ["d/4,f#/4,a/4,c/5|w", "g/4,g/4,b/4|w"],
+  ["f#/4,a/4,c/5,e/5|w", "g/4,g/4,b/4,d/5|w"],
+];
+
+<MusicExample width={800} client:load clef="treble" notes={example5} />
+
 - $vi$ (La menor) $\rightarrow$ mediante $V/vi$ o $vii^\circ/vi$
+
+export const example6 = [
+  ["e/4,g#/4,b/4,d/5|w", "a/4,a/4,c/5|w"],
+  ["g#/4,b/4,d/5,f(n)/5|w", "a/4,a/4,c/5,e/5|w"],
+];
+
+<MusicExample width={800} client:load clef="treble" notes={example6} />
 
 ## La Exclusión del $vii^\circ$ (Tríada Disminuida)
 
 En el modo mayor, el $vii^\circ$ (Si disminuido en Do Mayor) es una tríada disminuida. Su estructura contiene una quinta disminuida ($5d$) desde la fundamental.
 
+export const example7 = [
+  ["b/3@red,d/4,f/4@red,ab/4|w"],
+  ["f/4@red,a/4,cb/5@red,ebb/5|w"],
+  ["e/4@red,g/4,bb/4@red,db/5|w"],
+];
+
+<MusicExample width={400} client:load clef="treble" notes={example7} />
+
 ### ¿Por qué el $vii^\circ$ NO puede tener dominante secundaria?
 
-1. Inestabilidad Inherente: La $5d$ genera un tritono diatónico interno. Un acorde inestable por naturaleza no puede funcionar como punto de reposo ni como "tónica local".
+1. Inestabilidad Inherente: La $5d$ genera un tritono diatónico interno. Por naturaleza, el acorde es inestable y no puede percibirse como un punto de llegada. Por lo tanto, no puede ser tonicizado mediante una dominante secundaria.
 2. Imposibilidad Sintáctica: Pretender construir un $V7/vii^\circ$ requeriría alterar cromáticamente la nota que actúa como sensible en una forma que destruiría el marco diatónico base sin ofrecer un centro de llegada estable.
 
 Regla de Oro Analítica:
@@ -58,6 +95,6 @@ Nunca verás en un análisis correcto el cifrado $V7/vii^\circ$ o $vii^\circ7/vi
 
 En el modo menor natural/armónico, se deben observar las mismas reglas según la cualidad del acorde:
 
-- El $ii^\circ$ (disminuido) NO se tonicaliza.
-- El $i$, $III$, $iv$, $V$ (o $v$) y $VI$ SÍ son elegibles para recibir dominantes secundarias.
-- El $VII$ (subtónica mayor, ej. Sib en Do menor) puede ser tonicalizado mediante su $V7/VII$ (Fa7).
+- El $ii^\circ$ (disminuido) NO se toniciza.
+- El $III$, $iv$, $V$ (o $v$) y $VI$ SÍ son elegibles para recibir dominantes secundarias.
+- El $VII$ (subtónica mayor, ej. Sib en Do menor) puede ser tonicizado mediante su $V7/VII$ (Fa7).
