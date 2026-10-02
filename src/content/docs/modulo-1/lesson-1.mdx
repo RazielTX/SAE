@@ -1,0 +1,105 @@
+---
+title: 1.1 La Tensión Diatónica y la Función Dominante
+sidebar:
+  order: 1
+---
+
+import MusicExample from "../../../components/MusicExample.jsx";
+
+## El Tritono Diatónico como Motor Armónico
+
+El sistema tonal occidental se sostiene sobre la jerarquía de las relaciones de atracción armónica. La piedra angular de esta atracción es **el tritono**.
+
+:::tip[El tritono]
+
+Este intervalo se puede comprender desde varias perspectivas:
+
+- Distancia de 3 tonos completos
+- Distancia de 6 semitonos
+- Cuarta aumentada
+- Quinta disminuida
+
+export const example1 = ["c/4,f#/4@#d32f2f|h", "c/4,gb/4@#d32f2f|h"];
+
+<MusicExample client:load clef="treble" notes={example1} />
+
+:::
+
+En el modo mayor, el tritono diatónico se forma de manera natural entre los grados **$\hat{4}$** (subdominante) y **$\hat{7}$** (sensible)
+
+export const example2 = [
+  "c/4|q",
+  "d/4|q",
+  "e/4|q",
+  "f/4@#d32f2f|q",
+  "g/4|q",
+  "a/4|q",
+  "b/4@#d32f2f|q",
+];
+
+<MusicExample client:load clef="treble" notes={example2} />
+Este intervalo es inherentemente inestable debido a su disonancia acústica y
+exige una **resolución obligatoria** por movimiento contrario y de medio tono en
+sus voces constitutivas hacia las notas de la tríada de tónica:
+
+export const example3 = ["f/4@#d32f2f,b/4@#d32f2f|w", "e/4@green,c/5@green|w"];
+
+<MusicExample client:load clef="treble" notes={example3} />
+
+:::note[Disonancia acústica]
+
+La **disonancia acústica** es la combinación de sonidos con frecuencias cercanas que generan tensión, inestabilidad y una sensación de rugosidad en el oído.
+
+:::
+
+## Estructuras de Dominantes Diatónicas
+
+El tritono se manifiesta funcionalmente en dos estructuras primarias:
+
+### A. El Acorde de Séptima de Dominante ($V^7$)
+
+Es el acorde funcional por excelencia. Contiene la <span style="color: green;">fundamental ($\hat{5}$)</span>, <span style="color: lightblue;">la tercera/sensible ($\hat{7}$)</span>, <span style="color: orange;">la quinta ($\hat{2}$)</span> y <span style="color: red;">la séptima ($\hat{4}$)</span>. La presencia del tritono entre la <span style="color: red;">3ª y la 7ª del acorde ($\hat{7}$ y $\hat{4}$)</span> vectoriza el acorde inequívocamente hacia el <span style="color: green;">$I$ grado</span>.
+
+export const example4 = [
+  "g/4@green,b/4@lightblue,d/5@orange,f/5@red|w",
+  "c/4@|q",
+  "d/4@orange|q",
+  "e/4@|q",
+  "f/4@red|q",
+  "g/4@green|q",
+  "a/4@|q",
+  "b/4@lightblue|q",
+];
+
+<MusicExample client:load clef="treble" notes={example4} />
+
+export const example5 = [
+  "g/4,b/4@red,d/5,f/5@red|w",
+  "c/5,c/5,c/5@green,e/5@green|w",
+];
+
+<MusicExample client:load clef="treble" notes={example5} />
+
+### B. El Acorde de Séptima de Dominante ($vii^\circ$ y $vii^{\varnothing 7}$)
+
+Superpone terceras a partir de la sensible ($\hat{7}$). Dado que comparte el mismo tritono que el $V^7$, se considera funcionalmente como una dominante sin fundamental (un acorde de $V^7$ cuyo grado $\hat{5}$ ha sido omitido).
+
+export const example6 = [
+  "b/3@green,d/4@lightblue,f/4@orange,a(b)/4@red|w",
+  "c/4@|q",
+  "d/4@lightblue|q",
+  "e/4@|q",
+  "f/4@orange|q",
+  "g/4|q",
+  "a(b)/4@red|q",
+  "b/4@green|q",
+];
+
+<MusicExample client:load clef="treble" notes={example6} />
+
+export const example7 = [
+  "b/3@red,d/4,f/4@red,a(b)/4|w",
+  "c/4,c/4@green,e/4@green,g/4|w",
+];
+
+<MusicExample client:load clef="treble" notes={example7} />

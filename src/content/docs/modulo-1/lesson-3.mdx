@@ -1,0 +1,63 @@
+---
+title: 1.3 La Regla de la Cualidad de Destino
+sidebar:
+  order: 3
+---
+
+import MusicExample from "../../../components/MusicExample.jsx";
+
+Para que un acorde diatónico pueda ser tonicalizado mediante una dominante secundaria, debe cumplir con un requisito acústico e histológico básico denominado la **Regla de la Cualidad de Destino**.
+
+## Principio de Estabilidad del Destino
+
+Cualquier acorde que aspire a funcionar como "tónica local" debe tener la capacidad de percibirse como un punto de reposo (aunque sea temporal).
+
+En la música tonal clásica:
+
+- Las tríadas Mayores y menores poseen una quinta justa ($5J$) entre su fundamental y su quinta. Este intervalo proporciona la estabilidad acústica necesaria para actuar como punto de llegada.
+
+export const example1 = [
+  ["d/4,a/4|w"],
+  ["f#/4,c#/5|w"],
+  ["e/4,b/4|w"],
+  ["g#/4,d#/5|w"],
+];
+
+<MusicExample width={800} client:load clef="treble" notes={example1} />
+
+- Por lo tanto, en Do Mayor, los siguientes acordes diatónicos **SÍ pueden ser tonicizados**:
+  - $ii$ (Re menor) $\rightarrow$ mediante $V/ii$ o $vii^\circ/ii$
+
+export const example2 = [
+  ["d/4,a/4|w"],
+  ["f#/4,c#/5|w"],
+  ["e/4,b/4|w"],
+  ["g#/4,d#/5|w"],
+];
+
+<MusicExample width={800} client:load clef="treble" notes={example2} />
+
+- $iii$ (Mi menor) $\rightarrow$ mediante $V/iii$ o $vii^\circ/iii$
+- $IV$ (Fa Mayor) $\rightarrow$ mediante $V/IV$ o $vii^\circ/IV$
+- $V$ (Sol Mayor) $\rightarrow$ mediante $V/V$ o $vii^\circ/V$
+- $vi$ (La menor) $\rightarrow$ mediante $V/vi$ o $vii^\circ/vi$
+
+## La Exclusión del $vii^\circ$ (Tríada Disminuida)
+
+En el modo mayor, el $vii^\circ$ (Si disminuido en Do Mayor) es una tríada disminuida. Su estructura contiene una quinta disminuida ($5d$) desde la fundamental.
+
+### ¿Por qué el $vii^\circ$ NO puede tener dominante secundaria?
+
+1. Inestabilidad Inherente: La $5d$ genera un tritono diatónico interno. Un acorde inestable por naturaleza no puede funcionar como punto de reposo ni como "tónica local".
+2. Imposibilidad Sintáctica: Pretender construir un $V7/vii^\circ$ requeriría alterar cromáticamente la nota que actúa como sensible en una forma que destruiría el marco diatónico base sin ofrecer un centro de llegada estable.
+
+Regla de Oro Analítica:
+Nunca verás en un análisis correcto el cifrado $V7/vii^\circ$ o $vii^\circ7/vii^\circ$ en tonalidad mayor.
+
+## El Caso del Modo Menor
+
+En el modo menor natural/armónico, se deben observar las mismas reglas según la cualidad del acorde:
+
+- El $ii^\circ$ (disminuido) NO se tonicaliza.
+- El $i$, $III$, $iv$, $V$ (o $v$) y $VI$ SÍ son elegibles para recibir dominantes secundarias.
+- El $VII$ (subtónica mayor, ej. Sib en Do menor) puede ser tonicalizado mediante su $V7/VII$ (Fa7).

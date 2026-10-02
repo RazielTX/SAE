@@ -1,0 +1,73 @@
+---
+title: 1.2 Tonicización vs. Modulación
+sidebar:
+  order: 2
+---
+
+import MusicExample from "../../../components/MusicExample.jsx";
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Uno de los errores analíticos más comunes en niveles intermedios es confundir una **tonicización** efímera con una **modulación**.
+
+## Tonicización
+
+Es el proceso por el cual un grado diatónico distinto del $I$ (o $i$) es investido **temporalmente** de la cualidad de tónica mediante la introducción de un acorde de función dominante (o sensible) derivado de esa nueva escala.
+
+- **Alcance**: Afecta a un ámbito local (desde un único acorde hasta un par de compases).
+- **Jerarquía**: No altera el centro tonal macroscópico ni la armadura de clave implícita.
+- **Mecanismo**: Se logra mediante el uso de dominantes secundarias ($V/x$) o sensibles secundarias ($vii^\circ/x$).
+
+Consideremos el siguiente ejemplo en tonalidad de **Do mayor**, donde el acorde de **Re menor** ($ii$) es tonicizado mediante la introducción de su dominante ($A7$):
+
+export const example1 = [
+  "e/4@orange,g/4@orange,a/4@orange,c#/5@orange|q",
+  "f/4@orange,a/4@orange,d/5@orange|q",
+  "f/4,g/4,b/4,d/5|q",
+  "e/4,g/4,c/5,c/5|q",
+];
+
+<MusicExample client:load clef="treble" notes={example1} />
+
+Si bien estamos haciendo un enfasis temporal en el acorde de **Re menor**, la tonalidad de **Do mayor** sigue siendo la que predomina en el contexto global. La cadencia final ($V-I$) confirma la estabilidad de la tónica principal.
+
+## Modulación
+
+Es el desplazamiento real y sostenido del centro tonal hacia una nueva región tonal, confirmado por una cadencia formal y un cambio de estabilidad métrico-estructural.
+
+- **Alcance**: Afecta a la estructura formal (secciones completas: exposición, tema secundario, desarrollo).
+- **Jerarquía**: Reemplaza temporalmente a la tónica principal en la percepción del oyente.
+- **Mecanismo**: Requiere la consolidación mediante **cadencias auténticas perfectas** en la nueva tonalidad y prolongación de la nueva tónica.
+
+export const example2 = [
+  [
+    "e/4,g/4,c/5|q",
+    "f#/4@red,a/4@red,d/5@red|q",
+    "g/4@orange,b/4@orange,d/5@orange|q",
+    "g/4@green,b/4@green,e/5@green|q",
+    "g/4@green,a/4@green,c#/5@green,e/5@green|q",
+    "f#/4@green,a/4@green,d/5@green|q",
+    "d/4@green,f#/4@green,a/4@green,c/5@green|q",
+    "g/4@green,b/4@green|h",
+  ]
+];
+
+<MusicExample
+  width={800}
+  client:load
+  clef="treble"
+  notes={example2}
+/>
+
+<CardGrid stagger>
+  <Card title="Tonicización" icon="information">
+    - Afecta a un ámbito local
+    - Enfatiza temporalmente un grado diatónico distinto del I (o i)
+    - No altera la tonalidad principal
+    - Cadencias débiles o inexistentes
+  </Card>
+  <Card title="Modulación" icon="puzzle">
+    - Afecta a la estructura formal
+    - Desplaza el centro tonal hacia una nueva región tonal
+    - Requiere cadencias auténticas perfectas en la nueva tonalida
+  </Card>
+</CardGrid>
